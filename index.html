@@ -129,21 +129,30 @@
 			});
 
 			// How are you?
-			zoombot.on(['how are you', 'how is everybody', 'how is everyone', "how's it going"]).then(i => {
-				if (audioOn) {
-					zoombot.say('I am doing great thank you for asking');
-					$('#pics').css('background-image', 'url(img/zoombot-open1.jpg)');
-					setTimeout(function () {
-						$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
-					}, 1000);
-					setTimeout(function () {
+			zoombot
+				.on([
+					'how are you',
+					'how is everybody',
+					'how is everyone',
+					"how's it going",
+					'how is everyone doing',
+					"how's everyone doing",
+				])
+				.then(i => {
+					if (audioOn) {
+						zoombot.say('I am doing great thank you for asking');
 						$('#pics').css('background-image', 'url(img/zoombot-open1.jpg)');
-					}, 1400);
-					setTimeout(function () {
-						$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
-					}, 2000);
-				}
-			});
+						setTimeout(function () {
+							$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
+						}, 1000);
+						setTimeout(function () {
+							$('#pics').css('background-image', 'url(img/zoombot-open1.jpg)');
+						}, 1400);
+						setTimeout(function () {
+							$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
+						}, 2000);
+					}
+				});
 
 			// Can you take care of this
 			zoombot.on(['can you take care of this']).then(i => {
@@ -366,14 +375,26 @@
 					}, 4000);
 					setTimeout(function () {
 						$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
-					}, 4600);
+					}, 5000);
+					setTimeout(function () {
+						zoombot.say("if i remember later i'll email you");
+					}, 5200);
+					setTimeout(function () {
+						$('#pics').css('background-image', 'url(img/zoombot-open2.jpg)');
+					}, 5200);
+					setTimeout(function () {
+						$('#pics').css('background-image', 'url(img/zoombot-open1.jpg)');
+					}, 5600);
+					setTimeout(function () {
+						$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
+					}, 6000);
 				}
 			});
 
 			// Mediasite
 			zoombot.on(['media site', 'media site videos', 'videos']).then(i => {
 				if (audioOn) {
-					zoombot.say('The videos should up on the test site');
+					zoombot.say('The videos should up on the test site. are you not seeing them?');
 					$('#pics').css('background-image', 'url(img/zoombot-open1.jpg)');
 					setTimeout(function () {
 						$('#pics').css('background-image', 'url(img/zoombot-smile.jpg)');
